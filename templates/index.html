@@ -1,28 +1,11 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Student List</title>
+    <title>Inicio</title>
   </head>
   <body>
-    <h1>Student List</h1>
-    <table>
-      <tr>
-        <th>Matrícula</th>
-        <th>Nombre</th>
-        <th>Apellido Paterno</th>
-        <th>Apellido Materno</th>
-        <th>Fecha de nacimiento</th>
-      </tr>
-      {% for student in students_list %}
-      <tr>
-        <td>{{student.matricula}}</td>
-        <td>{{student.nombre}}</td>
-        <td>{{student.apellido_paterno}}</td>
-        <td>{{student.apellido_materno}}</td>
-        <td>{{student.fecha_nacimiento}}</td>
-      </tr>
-      {% endfor %}
-    </table>
-    <a href="/new_student">Add New Student</a>
+    <h1>Sistema de control escolar</h1>
+    <a href="/students">Estudiantes</a>
+    <a href="/professors">Profesores</a>
+    <a href="/courses">Materias</a>
   </body>
 </html>
