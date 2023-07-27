@@ -2,18 +2,27 @@
 <html>
   <head>
     <title>Profesores</title>
+    <style>
+      .encabezado {
+        color: black;
+        font-weight: 700;
+      }
+      .celda {
+        color: darkgray;
+      }
+    </style>
   </head>
   <body>
     <h1>Profesores</h1>
-    <table>
-      <tr>
+    <table class="fila">
+      <tr class="encabezado">
         <th>ID</th>
         <th>Nombre</th>
         <th>Apellido Paterno</th>
         <th>Apellido Materno</th>
       </tr>
       {% for prof in professors_list %}
-      <tr>
+      <tr class="celda">
         <td>{{prof.id_professor}}</td>
         <td>{{prof.nombre}}</td>
         <td>{{prof.apellido_paterno}}</td>
