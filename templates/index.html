@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Student List</title>
-</head>
-<body>
-    <h1>Student List</h1>
-    <ul>
-        {% for student in students %}
-            <li>{{ student["nombre"] + " " + student["apellido_paterno"] + " " + student["apellido_materno"] + " " + student["fecha_nacimiento"] + " " + student["matricula"]}}</li>
-        {% endfor %}
-    </ul>
-    <a href="/new_student">Add New Student</a>
-</body>
-</html>
+{% extends "base.html" %} {% block content %}
+<h2>Estudiantes</h2>
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido Paterno</th>
+        <th scope="col">Apellido Materno</th>
+        <th scope="col">Fecha de Nacimiento</th>
+        <th scope="col">Matricula</th>
+        <th></th>
+        <th></th>
+    </tr>
+</thead>
+  {% for student in students %}
+  <tr>
+    <td>{{ student["nombre"] }}</td>
+    <td>{{ student["apellido_paterno"] }}</td>
+    <td>{{ student["apellido_materno"] }}</td>
+    <td>{{ student["fecha_nacimiento"] }}</td>
+    <td>{{ student["matricula"] }}</td>
+    <td><a href="/edit_student/{{ student['matricula'] }}">Edit</a></td>
+    <td><a href="/delete_student/{{ student['matricula'] }}">Delete</a></td>
+  </tr>
+  {% endfor %}
+</ul>
+</table>
+<a href="/new_student">Add New Student</a>
+{% endblock %}

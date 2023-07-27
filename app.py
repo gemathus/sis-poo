@@ -4,6 +4,7 @@ app = Flask(__name__)
 
 students = []
 
+
 @app.route("/")
 def index():
     return render_template('index.html', students=students)
@@ -24,6 +25,7 @@ def new_student():
         }
         students.append(estudiante)
         return redirect('/')
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=8888)
